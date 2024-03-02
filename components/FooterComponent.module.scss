@@ -5,4 +5,123 @@
 .footer {
   margin-top: auto;
   width: 100%;
+  padding-bottom: 24px;
+
+  &__all {
+    border: inset solid $ClassicWhite;
+    border-radius: 66px;
+    box-shadow: inset 0 0 0 2px $ClassicWhite;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    color: $ClassicBlack;
+    font-size: 76px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 14px;
+  }
+
+  &__line {
+    border-color: $ClassicGray;
+
+    &:first-of-type {
+      margin-bottom: 24px;
+    }
+    &:last-of-type {
+      margin-top: 24px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px 62px;
+  }
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  &__text {
+    font-size: 20px;
+    color: $ClassicGray;
+    max-width: 300px;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.social {
+  &__list {
+    display: flex;
+    gap: 22px;
+  }
+
+  &__background {
+    background-color: $ClassicWhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $ClassicGray;
+    height: 48px;
+    width: 48px;
+
+    &:hover .social__icon {
+      transform: scale(1.2);
+    }
+  }
+
+  &__icon {
+    height: 24px;
+    width: 24px;
+    transition: transform 0.3s ease;
+  }
+}
+
+.text {
+  color: $ClassicBlack;
+  position: relative;
+  font-family: "Roboto";
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: $ClassicGray;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+    left: 0;
+  }
+
+  &:hover {
+    color: $ClassicGray;
+    transition: color 0.3s ease;
+  }
 }
