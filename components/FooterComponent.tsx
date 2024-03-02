@@ -78,7 +78,7 @@ const FooterComponent = () => {
           </div>
         </div>
         <div className={classNames(s.footer__box)}>
-          <p>© All rights reserved. Marc Heine. Powered by Webflow</p>
+          <p>© All rights reserved.</p>
 
           <div className={s.social__list}>
             {socialMediaLinks.map((socialMedia, index) => (
