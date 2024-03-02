@@ -26,7 +26,7 @@ const HeroSection = () => {
         </p>
 
         <div className={s.hero__buttons}>
-          <MainButtonComponent text="Contact" href="/contact" />
+          <MainButtonComponent text="Contact Us" href="/contact" />
           <LearnMoreComponent text="learn more" href="/" />
         </div>
       </div>
