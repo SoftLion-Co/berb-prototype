@@ -4,4 +4,23 @@
 
 .header {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    text-transform: uppercase;
+  }
+
+  &__navigation {
+    display: flex;
+    padding: 15px 80px;
+    background-color: $ClassicWhite;
+    border-radius: 70px;
+    gap: 100px;
+  }
+
+  &__item {
+    color: $MainBrand;
+  }
 }
