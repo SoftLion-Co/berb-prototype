@@ -1,6 +1,9 @@
 import React from "react";
-import Image from "next/image";
 import HeroSection from "@/app/section/main_page/HeroSection";
+
+export async function generateMetadata({}) {
+  return { title: "Berb" };
+}
 
 export default function Home() {
   return (
