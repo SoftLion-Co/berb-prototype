@@ -21,6 +21,7 @@
   }
 
   &__item {
+    text-transform: capitalize;
     color: $MainBrand;
   }
 }
