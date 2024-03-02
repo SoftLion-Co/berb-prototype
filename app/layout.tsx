@@ -5,7 +5,7 @@ import HeaderComponent from "@/components/HeaderComponent";
 import FooterComponent from "@/components/FooterComponent";
 
 export const metadata: Metadata = {
-  title: "BERB",
+  title: "Berb",
 };
 
 export default function RootLayout({
