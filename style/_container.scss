@@ -1,3 +1,26 @@
+@import "@/style/colors";
+@import "@/style/viewports";
+
+.box {
+  width: 100%;
+  padding: 0 16px;
+
+  @include for-size(laptop) {
+    padding: 0 24px;
+  }
+}
+
+.background {
+  padding: 40px 0;
+  background-color: $ClassicWhite;
+  border-radius: 22px;
+
+  @include for-size(laptop) {
+    padding: 90px 0;
+    border-radius: 66px;
+  }
+}
+
 .container {
   max-width: 320px;
   padding: 0 16px;
