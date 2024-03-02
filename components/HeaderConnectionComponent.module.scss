@@ -1,0 +1,19 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.header {
+  width: 100%;
+  display: flex;
+  gap: 96px;
+  padding-top: 26px;
+  padding-bottom: 46px;
+
+  &__link {
+    display: flex;
+    gap: 10px;
+
+    font-size: 22px;
+    color: $TextGray;
+  }
+}
