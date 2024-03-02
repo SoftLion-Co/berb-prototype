@@ -1,0 +1,31 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.hero {
+  &__image {
+    position: relative;
+    width: 100%;
+    bottom: 120px;
+    z-index: -1;
+  }
+
+  &__container {
+    position: absolute;
+    top: 400px;
+    width: 1032px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+}
