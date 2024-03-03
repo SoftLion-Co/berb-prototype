@@ -1,0 +1,39 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.container {
+  margin-bottom: 120px;
+
+  @include for-size(tablet) {
+    margin-bottom: 180px;
+  }
+  @include for-size(laptop) {
+    margin-bottom: 240px;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 300px;
+  }
+}
+
+.help {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 22px;
+
+    @include for-size(laptop) {
+      font-size: 34px;
+      color: $TextGray;
+      width: 800px;
+    }
+  }
+}

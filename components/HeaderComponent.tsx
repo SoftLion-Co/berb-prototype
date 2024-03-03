@@ -71,6 +71,7 @@ const HeaderComponent = () => {
             className={s.button__desktop}
             text="contact us"
             href="/contact"
+            color="white"
           />
 
           <Button className={s.modal__burger} onClick={open}>
@@ -103,6 +104,7 @@ const HeaderComponent = () => {
             className={s.button__mobile}
             text="contact us"
             href="/contact"
+            color="white"
             onClick={handleCloseModal}
           />
         </div>
