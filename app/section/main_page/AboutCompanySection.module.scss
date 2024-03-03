@@ -1,0 +1,46 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.container {
+  width: 100%;
+}
+
+.company {
+  display: grid;
+  justify-items: start;
+  gap: 20px;
+
+  @include for-size(laptop) {
+    gap: 48px;
+  }
+
+  &__links,
+  &__link {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__link {
+    font-size: 20px;
+
+    @include for-size(tablet) {
+      font-size: 36px;
+    }
+    @include for-size(laptop) {
+      font-size: 74px;
+    }
+    @include for-size(desktop) {
+      font-size: 90px;
+    }
+  }
+
+  &__text {
+    color: $TextGray;
+
+    @include for-size(laptop) {
+      font-size: 34px;
+      width: 1000px;
+    }
+  }
+}
