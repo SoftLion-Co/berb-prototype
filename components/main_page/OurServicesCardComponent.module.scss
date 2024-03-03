@@ -1,0 +1,97 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include for-size(tablet) {
+    gap: 60px;
+  }
+  @include for-size(laptop) {
+    gap: 80px;
+  }
+  @include for-size(desktop) {
+    gap: 100px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @include for-size(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    @include for-size(tablet) {
+      width: 250px;
+    }
+    @include for-size(laptop) {
+      width: 350px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    @include for-size(tablet) {
+      width: 400px;
+    }
+    @include for-size(laptop) {
+      width: 500px;
+    }
+    @include for-size(desktop) {
+      width: 600px;
+    }
+  }
+
+  &__link {
+    font-size: 46px;
+    text-transform: capitalize;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: $ClassicWhite;
+
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &__text {
+    color: $TextGray;
+
+    @include for-size(laptop) {
+      font-size: 28px;
+    }
+    @include for-size(desktop) {
+      font-size: 34px;
+    }
+  }
+
+  &__line {
+    width: 100%;
+    background-color: $ClassicGray;
+  }
+}
