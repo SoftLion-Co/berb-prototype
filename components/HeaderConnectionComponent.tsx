@@ -20,7 +20,7 @@ const ConnectionProps = [
 
 const HeaderConnectionComponent = () => {
   return (
-    <div className={classNames(s.container, s.header)}>
+    <address className={classNames(s.container, s.header)}>
       {ConnectionProps.map((item, index) => (
         <Link
           className={s.header__link}
@@ -32,7 +32,7 @@ const HeaderConnectionComponent = () => {
           {item.text}
         </Link>
       ))}
-    </div>
+    </address>
   );
 };
 
