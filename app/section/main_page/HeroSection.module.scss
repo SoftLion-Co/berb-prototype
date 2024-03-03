@@ -16,7 +16,7 @@
     }
     @include for-size(laptop) {
       min-height: 1060px;
-      bottom: 120px;
+      bottom: 90px;
     }
     @include for-size(desktop) {
       max-height: 1360px;
