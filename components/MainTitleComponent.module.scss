@@ -2,6 +2,8 @@
 @import "@/style/viewports";
 
 .title {
+  width: max-content;
+
   &__black {
     color: $ClassicBlack;
   }

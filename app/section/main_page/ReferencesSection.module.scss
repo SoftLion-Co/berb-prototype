@@ -1,0 +1,87 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.container {
+  @include for-size(tablet) {
+    position: relative;
+  }
+}
+.references {
+  display: grid;
+  gap: 40px;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__title {
+    @include for-size(tablet) {
+      position: absolute;
+      left: 14px;
+    }
+    @include for-size(laptop) {
+      left: 100px;
+    }
+  }
+
+  &__learn {
+    @include for-size(tablet) {
+      position: absolute;
+      bottom: 44px;
+      right: 2.5%;
+    }
+    @include for-size(laptop) {
+      bottom: 60px;
+      right: 8.5%;
+    }
+    @include for-size(desktop) {
+      bottom: 110px;
+      right: 6%;
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: 40px;
+
+    @include for-size(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+
+    @include for-size(tablet) {
+      width: 48%;
+      height: 500px;
+
+      &:nth-child(odd) {
+        margin-top: 80px;
+
+        @include for-size(laptop) {
+          margin-top: 120px;
+        }
+        @include for-size(desktop) {
+          margin-top: 200px;
+        }
+      }
+    }
+    @include for-size(laptop) {
+      width: 45%;
+      height: 700px;
+    }
+    @include for-size(desktop) {
+      width: 700px;
+      height: 900px;
+    }
+  }
+}
