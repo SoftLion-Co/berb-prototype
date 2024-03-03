@@ -7,11 +7,21 @@ interface ButtonProps {
   text: string;
   href: string;
   className?: string;
+  onClick?: () => void;
 }
 
-const MainButtonComponent: FC<ButtonProps> = ({ text, href, className }) => {
+const MainButtonComponent: FC<ButtonProps> = ({
+  text,
+  href,
+  className,
+  onClick,
+}) => {
   return (
-    <Link className={classNames(s.main__button, className)} href={href}>
+    <Link
+      className={classNames(s.main__button, className)}
+      onClick={onClick}
+      href={href}
+    >
       {text}
     </Link>
   );
