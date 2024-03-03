@@ -4,24 +4,99 @@
 
 .header {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   &__logo {
+    color: $ClassicWhite;
     text-transform: uppercase;
+    font-size: 36px;
+    font-weight: 500;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__navigation {
     display: flex;
-    padding: 15px 80px;
-    background-color: $ClassicWhite;
-    border-radius: 70px;
-    gap: 100px;
+    flex-direction: column;
+    gap: 20px;
+
+    @include for-size(laptop) {
+      display: flex;
+      flex-direction: row;
+      padding: 10px 50px;
+      background-color: $ClassicWhite;
+      border-radius: 70px;
+      gap: 60px;
+    }
+    @include for-size(desktop) {
+      display: flex;
+      padding: 14px 80px;
+      gap: 100px;
+    }
   }
 
   &__item {
     text-transform: capitalize;
     color: $MainBrand;
+    font-size: 24px;
+
+    @include for-size(laptop) {
+      font-size: 20px;
+    }
+  }
+}
+
+.content {
+  &__desktop {
+    display: none;
+
+    @include for-size(laptop) {
+      display: flex;
+    }
+  }
+}
+
+.button {
+  &__desktop {
+    display: none;
+
+    @include for-size(laptop) {
+      display: block;
+    }
+  }
+
+  &__mobile {
+    color: $ClassicWhite;
+    font-size: 24px;
+
+    @include for-size(laptop) {
+      display: none;
+    }
+  }
+}
+
+.modal {
+  &__container {
+    display: grid;
+    justify-items: start;
+    gap: 40px;
+  }
+
+  &__logo {
+    color: $ClassicBlack;
+    font-weight: 500;
+  }
+
+  &__burger {
+    @include for-size(laptop) {
+      display: none;
+    }
+  }
+
+  &__image {
+    border-radius: 0;
   }
 }

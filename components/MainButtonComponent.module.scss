@@ -7,6 +7,10 @@
     background: $ClassicBlack;
     text-transform: capitalize;
     border-radius: 50px;
-    padding: 18px 70px;
+    padding: 10px 28px;
+
+    @include for-size(desktop) {
+      padding: 14px 44px;
+    }
   }
 }

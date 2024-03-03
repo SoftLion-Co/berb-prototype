@@ -5,15 +5,35 @@
 .header {
   width: 100%;
   display: flex;
-  gap: 96px;
-  padding-top: 26px;
-  padding-bottom: 90px;
+  flex-direction: column;
+  gap: 6px;
+
+  padding-top: 12px;
+  padding-bottom: 30px;
+
+  @include for-size(tablet) {
+    flex-direction: row;
+    gap: 20px;
+
+    padding-top: 26px;
+    padding-bottom: 90px;
+  }
+  @include for-size(laptop) {
+    gap: 96px;
+
+    padding-top: 26px;
+    padding-bottom: 90px;
+  }
 
   &__link {
+    color: $TextGray;
     display: flex;
     gap: 10px;
+  }
 
-    font-size: 22px;
-    color: $TextGray;
+  &__image {
+    border-radius: 0;
+    width: 26px;
+    height: 26px;
   }
 }

@@ -28,7 +28,7 @@ const HeaderConnectionComponent = () => {
           href={item.href}
           target={item.target}
         >
-          <Image src={item.icon} alt="Icon" />
+          <Image className={s.header__image} src={item.icon} alt="Icon" />
           {item.text}
         </Link>
       ))}
