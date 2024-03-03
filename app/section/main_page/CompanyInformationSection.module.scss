@@ -1,0 +1,43 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.info {
+  width: 100%;
+
+  &__content {
+    display: grid;
+    gap: 20px;
+
+    @include for-size(tablet) {
+      grid-template-columns: repeat(2, 2fr);
+      gap: 30px 60px;
+    }
+    @include for-size(laptop) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__amount {
+    font-size: 80px;
+
+    @include for-size(laptop) {
+      font-size: 110px;
+    }
+  }
+
+  &__text {
+    color: $TextGray;
+
+    @include for-size(laptop) {
+      font-size: 26px;
+    }
+  }
+}
