@@ -50,7 +50,12 @@ const FooterComponent = () => {
                   founded in 2020 in Cologne.
                 </p>
                 <Link className={s.info__link} href={"mailto:berb@gmail.com"}>
-                  <span className={s.text}>berb@gmail.com</span>
+                  <span
+                    className={s.text}
+                    style={{ textTransform: "lowercase" }}
+                  >
+                    berb@gmail.com
+                  </span>
                 </Link>
                 <Link className={s.info__link} href={"tel:+4922112122315"}>
                   <span className={s.text}>+49 221 12 12 23 15</span>
