@@ -1,0 +1,9 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.people {
+  &__title {
+    margin-bottom: 52px;
+  }
+}

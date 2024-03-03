@@ -1,0 +1,91 @@
+@import "@/style/colors";
+@import "@/style/viewports";
+
+$MainBrand: #161722;
+$ClassicWhite: #ffffff;
+$ClassicBlack: #0c0d14;
+$ClassicGray: #696969;
+$TextGray: #c6c6c7;
+$GrayCardBackground: #f7f7f7;
+
+.people {
+  display: grid;
+  gap: 24px;
+
+  @include for-size(laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include for-size(desktop) {
+    gap: 52px 100px;
+  }
+
+  &__container {
+    background: $GrayCardBackground;
+    padding: 60px 36px;
+    border-radius: 32px;
+    display: grid;
+    gap: 32px;
+
+    @include for-size(laptop) {
+      &:nth-child(even) {
+        background: $GrayCardBackground;
+        padding: 60px 36px;
+        transform: translateY(-140px);
+      }
+    }
+    @include for-size(desktop) {
+      border-radius: 66px;
+      display: grid;
+      gap: 42px;
+    }
+  }
+
+  &__title {
+    color: $ClassicBlack;
+
+    @include for-size(laptop) {
+      font-size: 40px;
+    }
+  }
+
+  &__text {
+    color: $ClassicGray;
+
+    @include for-size(laptop) {
+      font-size: 40px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid $ClassicGray;
+  }
+
+  &__about {
+    display: grid;
+  }
+
+  &__name {
+    color: $ClassicBlack;
+
+    @include for-size(laptop) {
+      font-size: 38px;
+    }
+  }
+
+  &__position {
+    color: $ClassicGray;
+
+    @include for-size(laptop) {
+      font-size: 26px;
+    }
+  }
+}

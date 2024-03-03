@@ -5,6 +5,7 @@ import AboutCompanySection from "@/app/section/main_page/AboutCompanySection";
 import OurServicesSection from "@/app/section/main_page/OurServicesSection";
 import ReferencesSection from "@/app/section/main_page/ReferencesSection";
 import OurTeamSection from "@/app/section/main_page/OurTeamSection";
+import PeopleSection from "@/app/section/main_page/PeopleSection";
 import HelpFurtherSection from "@/app/section/main_page/HelpFurtherSection";
 
 export async function generateMetadata({}) {
@@ -20,6 +21,7 @@ export default function Home() {
       <OurServicesSection />
       <ReferencesSection />
       <OurTeamSection />
+      <PeopleSection />
       <HelpFurtherSection />
     </React.Fragment>
   );
