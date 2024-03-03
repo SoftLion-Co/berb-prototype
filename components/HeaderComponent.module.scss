@@ -78,7 +78,7 @@
   }
 }
 
-.modal {
+.modal {  
   @include for-size(laptop) {
     display: none;
   }
