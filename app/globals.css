@@ -40,6 +40,21 @@ body {
   margin: 0;
 }
 
+main {
+  display: grid;
+  gap: 80px;
+
+  @media screen and (min-width: 768px) {
+    gap: 120px;
+  }
+  @media screen and (min-width: 1280px) {
+    gap: 140px;
+  }
+  @media screen and (min-width: 1920px) {
+    gap: 180px;
+  }
+}
+
 img {
   pointer-events: none;
   user-select: none;
