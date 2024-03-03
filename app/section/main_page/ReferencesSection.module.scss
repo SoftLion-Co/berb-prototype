@@ -2,11 +2,28 @@
 @import "@/style/container";
 @import "@/style/viewports";
 
+.background {
+  padding-bottom: 0;
+  display: grid;
+  gap: 60px;
+
+  @include for-size(tablet) {
+    gap: 100px;
+  }
+  @include for-size(laptop) {
+    gap: 140px;
+  }
+  @include for-size(desktop) {
+    gap: 180px;
+  }
+}
+
 .container {
   @include for-size(tablet) {
     position: relative;
   }
 }
+
 .references {
   display: grid;
   gap: 40px;
@@ -16,6 +33,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+
+    @include for-size(tablet) {
+      gap: 0;
+    }
   }
 
   &__title {
