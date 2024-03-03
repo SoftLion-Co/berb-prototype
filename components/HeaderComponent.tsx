@@ -14,6 +14,7 @@ import MainButtonComponent from "@/components/MainButtonComponent";
 
 interface HeaderContentProps {
   className?: string;
+  onClick?: () => void;
 }
 
 const NavigationItem = [
@@ -24,17 +25,24 @@ const NavigationItem = [
   { text: "contact us", href: "/contact" },
 ];
 
-const HeaderLogo: FC<HeaderContentProps> = ({ className }) => {
+const HeaderLogo: FC<HeaderContentProps> = ({ className, onClick }) => {
   return (
-    <Link className={classNames(s.header__logo, className)} href="/">
+    <Link
+      className={classNames(s.header__logo, className)}
+      onClick={onClick}
+      href="/"
+    >
       berb
     </Link>
   );
 };
 
-const HeaderContent: FC<HeaderContentProps> = ({ className }) => {
+const HeaderContent: FC<HeaderContentProps> = ({ className, onClick }) => {
   return (
-    <nav className={classNames(s.header__navigation, className)}>
+    <nav
+      className={classNames(s.header__navigation, className)}
+      onClick={onClick}
+    >
       {NavigationItem.map((item, index) => (
         <Link className={s.header__item} key={index} href={item.href}>
           {item.text}
@@ -46,6 +54,10 @@ const HeaderContent: FC<HeaderContentProps> = ({ className }) => {
 
 const HeaderComponent = () => {
   const [opened, { open, close }] = useDisclosure(false);
+
+  const handleCloseModal = () => {
+    close();
+  };
 
   return (
     <>
@@ -74,6 +86,7 @@ const HeaderComponent = () => {
       </header>
 
       <Modal
+        className={s.modal}
         opened={opened}
         onClose={close}
         fullScreen
@@ -81,12 +94,16 @@ const HeaderComponent = () => {
         transitionProps={{ transition: "fade", duration: 200 }}
       >
         <div className={classNames(s.container, s.modal__container)}>
-          <HeaderLogo className={s.modal__logo} />
-          <HeaderContent className={s.content__mobile} />
+          <HeaderLogo className={s.modal__logo} onClick={handleCloseModal} />
+          <HeaderContent
+            className={s.content__mobile}
+            onClick={handleCloseModal}
+          />
           <MainButtonComponent
             className={s.button__mobile}
             text="contact us"
             href="/contact"
+            onClick={handleCloseModal}
           />
         </div>
       </Modal>

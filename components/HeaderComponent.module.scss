@@ -79,6 +79,10 @@
 }
 
 .modal {
+  @include for-size(laptop) {
+    display: none;
+  }
+
   &__container {
     display: grid;
     justify-items: start;
