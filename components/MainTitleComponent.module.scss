@@ -1,0 +1,8 @@
+@import "@/style/colors";
+@import "@/style/viewports";
+
+.title {
+  &__black {
+    color: $ClassicBlack;
+  }
+}
