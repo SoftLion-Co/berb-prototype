@@ -1,13 +1,14 @@
 import Image from "next/image";
+import classNames from "classnames";
 import s from "./ReferencesSection.module.scss";
 import LearnMoreComponent from "@/components/LearnMoreComponent";
 import MainTitleComponent from "@/components/MainTitleComponent";
+import HowCanHelpSection from "@/app/section/main_page/HowCanHelpSection";
 
 import ReferencesOne from "@/images/HomePage/ReferencesSection/ReferencesOne.png";
 import ReferencesTwo from "@/images/HomePage/ReferencesSection/ReferencesTwo.png";
 import ReferencesThree from "@/images/HomePage/ReferencesSection/ReferencesThree.png";
 import ReferencesFour from "@/images/HomePage/ReferencesSection/ReferencesFour.png";
-import classNames from "classnames";
 
 const ReferencesImages = [
   {
@@ -55,6 +56,7 @@ const ReferencesSection = () => {
             />
           </div>
         </div>
+        <HowCanHelpSection />
       </div>
     </section>
   );

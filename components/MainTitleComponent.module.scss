@@ -2,7 +2,19 @@
 @import "@/style/viewports";
 
 .title {
-  width: max-content;
+  font-size: 46px;
+  font-weight: 400;
+  text-align: center;
+
+  @include for-size(laptop) {
+    text-align: left;
+  }
+  @include for-size(laptop) {
+    font-size: 62px;
+  }
+  @include for-size(desktop) {
+    font-size: 90px;
+  }
 
   &__black {
     color: $ClassicBlack;
