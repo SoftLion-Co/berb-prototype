@@ -91,7 +91,7 @@ const HeaderComponent = () => {
         onClose={close}
         fullScreen
         radius={0}
-        transitionProps={{ transition: "fade", duration: 200 }}
+        transitionProps={{ transition: "scale-x", duration: 200 }}
       >
         <div className={classNames(s.container, s.modal__container)}>
           <HeaderLogo className={s.modal__logo} onClick={handleCloseModal} />
