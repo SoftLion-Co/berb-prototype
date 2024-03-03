@@ -25,6 +25,7 @@
   }
 
   &__text {
+    color: $TextGray;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -32,7 +33,6 @@
 
     @include for-size(laptop) {
       font-size: 34px;
-      color: $TextGray;
       width: 800px;
     }
   }
