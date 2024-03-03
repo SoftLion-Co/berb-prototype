@@ -8,12 +8,7 @@ import classNames from "classnames";
 const HeroSection = () => {
   return (
     <section className={s.box}>
-      <Image
-        className={s.hero__image}
-        src={HomeHero}
-        alt="Home Hero"
-        width={1820}
-      />
+      <Image className={s.hero__image} src={HomeHero} alt="Home Hero" />
       <div className={classNames(s.container, s.hero__container)}>
         <h1 className={s.hero__title}>
           YOUR PLUMBING SPECIALIST <br />

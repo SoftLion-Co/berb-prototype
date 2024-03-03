@@ -43,7 +43,11 @@ body {
 img {
   pointer-events: none;
   user-select: none;
-  border-radius: 66px;
+  border-radius: 44px;
+
+  @media screen and (min-width: 1280px) {
+    border-radius: 66px;
+  }
 }
 
 svg {
