@@ -1,0 +1,78 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.container {
+  width: 100%;
+}
+
+.team {
+  &__container {
+    display: grid;
+    gap: 22px;
+  }
+
+  &__content {
+    display: grid;
+    gap: 40px;
+
+    @include for-size(tablet) {
+      gap: 60px;
+    }
+    @include for-size(laptop) {
+      gap: 80px;
+    }
+    @include for-size(desktop) {
+      gap: 100px;
+    }
+  }
+
+  &__title {
+    text-align: left;
+    margin-bottom: 60px;
+
+    @include for-size(tablet) {
+      margin-bottom: 80px;
+    }
+    @include for-size(laptop) {
+      margin-bottom: 120px;
+    }
+    @include for-size(desktop) {
+      margin-bottom: 140px;
+    }
+  }
+
+  &__name {
+    font-size: 28px;
+
+    @include for-size(tablet) {
+      font-size: 48px;
+    }
+    @include for-size(laptop) {
+      font-size: 58px;
+    }
+    @include for-size(desktop) {
+      font-size: 68px;
+    }
+  }
+
+  &__position {
+    color: $TextGray;
+    font-size: 16px;
+
+    @include for-size(tablet) {
+      font-size: 26px;
+    }
+    @include for-size(laptop) {
+      font-size: 30px;
+    }
+    @include for-size(desktop) {
+      font-size: 36px;
+    }
+  }
+
+  &__line {
+    background-color: $ClassicGray;
+    width: 100%;
+  }
+}
