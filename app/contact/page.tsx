@@ -1,3 +1,4 @@
+import React from "react";
 import s from "./page.module.scss";
 import ContactSection from "../section/contact_page/ContactSection";
 
@@ -7,8 +8,8 @@ export async function generateMetadata({}) {
 
 export default function Contact() {
   return (
-    <div>
+    <React.Fragment>
       <ContactSection />
-    </div>
+    </React.Fragment>
   );
 }

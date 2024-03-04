@@ -1,3 +1,4 @@
+import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import classNames from "classnames";
@@ -8,6 +9,10 @@ import MainButtonComponent from "../MainButtonComponent";
 import Geolocation from "@/images/Vector/Connection/Geolocation.svg";
 import Mail from "@/images/Vector/Connection/Mail.svg";
 import Phone from "@/images/Vector/Connection/Phone.svg";
+
+interface ContactProps {
+  className?: string;
+}
 
 const ConnectionProps = [
   {
@@ -20,9 +25,9 @@ const ConnectionProps = [
   { text: "0221/12 12 23 15", icon: Phone, href: "tel:+022112122315" },
 ];
 
-const ContactComponent = () => {
+const ContactComponent: FC<ContactProps> = ({ className }) => {
   return (
-    <div className={s.box}>
+    <div className={classNames(s.box, className)}>
       <div className={s.background}>
         <div className={classNames(s.container, s.contact)}>
           <div className={s.contact__container}>
