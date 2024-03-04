@@ -1,3 +1,48 @@
 @import "@/style/colors";
 @import "@/style/container";
 @import "@/style/viewports";
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  width: 100%;
+  bottom: 74px;
+  z-index: -1;
+
+  @include for-size(laptop) {
+    bottom: 90px;
+  }
+}
+
+.contact {
+  width: 100%;
+
+  &__image {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: -90px;
+    height: 1200px;
+
+    @include for-size(laptop) {
+      height: 1480px;
+    }
+    @include for-size(desktop) {
+      height: 1665px;
+    }
+  }
+
+  &__component {
+    position: absolute;
+    top: 24%;
+
+    @include for-size(laptop) {
+      top: 30%;
+    }
+    @include for-size(desktop) {
+      top: 36%;
+    }
+  }
+}
