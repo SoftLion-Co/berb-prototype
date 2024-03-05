@@ -26,7 +26,10 @@ const SanitaryObject = [
 export default function Sanitary() {
   return (
     <>
-      <ServiceHeadingComponent text="we are a certified company & provide best plumbing services for you & your company." />
+      <ServiceHeadingComponent
+        title="Sanitary"
+        text="we are a certified company & provide best plumbing services for you & your company."
+      />
 
       {SanitaryObject.map((item, index) => (
         <ServiceSection key={index} image={item.image} text={item.text} />
