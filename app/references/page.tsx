@@ -6,5 +6,11 @@ export async function generateMetadata({}) {
 }
 
 export default function References() {
-  return <div><SliderSection/ ></div>;
+  return (
+    <section className={s.sliders}>
+      <SliderSection />
+      <SliderSection />
+      <SliderSection />
+    </section>
+  );
 }
