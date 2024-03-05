@@ -1,0 +1,33 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.service {
+  display: grid;
+  justify-items: center;
+  width: 100%;
+  gap: 22px;
+
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 0;
+  }
+
+  &__text {
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    @include for-size(tablet) {
+      width: 320px;
+    }
+    @include for-size(laptop) {
+      width: 500px;
+    }
+    @include for-size(desktop) {
+      width: 610px;
+    }
+  }
+}
