@@ -1,3 +1,4 @@
+import SliderSection from "../section/references_page/SliderSection";
 import s from "./page.module.scss";
 
 export async function generateMetadata({}) {
@@ -5,5 +6,5 @@ export async function generateMetadata({}) {
 }
 
 export default function References() {
-  return <div></div>;
+  return <div><SliderSection/ ></div>;
 }

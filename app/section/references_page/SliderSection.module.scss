@@ -1,0 +1,27 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.slider {
+  margin-bottom: 250px;
+  &__icon {
+    border: none;
+    &_back {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__image {
+    width: 602px;
+    height: 905px;
+    object-fit: cover;
+  }
+}
+
+.sideblock {
+  writing-mode: vertical-rl;
+}
+
+.section{
+  display: flex;
+}
