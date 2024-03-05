@@ -1,0 +1,17 @@
+@import "@/style/colors";
+@import "@/style/container";
+@import "@/style/viewports";
+
+.services {
+  display: grid;
+  gap: 200px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 150px;
+  }
+
+
+}
