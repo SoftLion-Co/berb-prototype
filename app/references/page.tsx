@@ -1,9 +1,13 @@
-import s from "./page.module.scss";
+import SliderSection from "../section/references_page/SliderSection";
 
 export async function generateMetadata({}) {
   return { title: "Berb - References" };
 }
 
 export default function References() {
-  return <div></div>;
+  return (
+    <>
+      <SliderSection />
+    </>
+  );
 }
