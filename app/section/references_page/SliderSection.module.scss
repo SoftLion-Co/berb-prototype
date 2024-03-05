@@ -1,74 +1,21 @@
-@import "@/style/colors";
-@import "@/style/container";
 @import "@/style/viewports";
 
-.slider {
-  width: 82%;
+.sliders {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  margin-bottom: 80px;
 
-  &__icon,
-  &__icon_back {
-    border: none;
-    height: 26px;
-
-    &_back {
-      transform: rotate(180deg);
-    }
-
-    @include for-size(tablet) {
-      height: 30px;
-    }
-    @include for-size(laptop) {
-      height: 36px;
-    }
-    @include for-size(desktop) {
-      height: 40px;
-    }
-  }
-
-  &__image {
-    width: 302px;
-    height: 452px;
-
-    @include for-size(tablet) {
-      width: 402px;
-      height: 610px;
-    }
-    @include for-size(laptop) {
-      width: 502px;
-      height: 750px;
-    }
-    @include for-size(desktop) {
-      width: 602px;
-      height: 905px;
-    }
-    object-fit: cover;
-  }
-}
-
-.sideblock {
-  writing-mode: vertical-lr;
-  transform: scale(-1);
-  width: 18%;
-  margin-bottom: 74px;
   @include for-size(tablet) {
-    margin-bottom: 84px;
+    gap: 150px;
+    margin-bottom: 120px;
   }
   @include for-size(laptop) {
-    margin-bottom: 94px;
+    gap: 200px;
+    margin-bottom: 140px;
   }
   @include for-size(desktop) {
-    margin-bottom: 104px;
+    gap: 250px;
+    margin-bottom: 164px;
   }
-
-  &__title {
-    text-align: start !important;
-  }
-}
-
-.flex {
-  display: flex;
-}
-
-.section {
-  display: flex;
 }
