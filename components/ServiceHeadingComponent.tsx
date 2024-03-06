@@ -6,7 +6,7 @@ import LearnMoreComponent from "@/components/LearnMoreComponent";
 
 type ServiceHeadingProps = {
   title: string;
-  text: string;
+  text?: string;
   className?: string;
 };
 
