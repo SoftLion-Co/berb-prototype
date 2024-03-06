@@ -1,4 +1,5 @@
-import s from "./page.module.scss";
+import classNames from "classnames";
+import s from "@/app/sanitary/page.module.scss";
 
 import ServiceSection from "@/app/section/certified_page/ServiceSection";
 import HowCanHelpSection from "@/app/section/main_page/HowCanHelpSection";
@@ -23,6 +24,21 @@ const SolarObject = [
   },
 ];
 
+const ListObject = [
+  {
+    item: "Installation of solar systems",
+  },
+  {
+    item: "Maintenance and repair of solar systems",
+  },
+  {
+    item: "Spare parts delivery with and without installation",
+  },
+  {
+    item: "Year-round fault and emergency service",
+  },
+];
+
 export default function Solar() {
   return (
     <>
@@ -34,6 +50,15 @@ export default function Solar() {
       {SolarObject.map((item, index) => (
         <ServiceSection key={index} image={item.image} text={item.text} />
       ))}
+
+      <ul className={classNames(s.container, s.services__list)}>
+        {ListObject.map((item, index) => (
+          <li className={s.services__item} key={index}>
+            {item.item}
+            <hr className={s.services__line} />
+          </li>
+        ))}
+      </ul>
 
       <HowCanHelpSection className={s.box} />
 

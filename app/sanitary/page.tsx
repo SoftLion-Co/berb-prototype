@@ -4,7 +4,6 @@ import ServiceSection from "@/app/section/certified_page/ServiceSection";
 import HowCanHelpSection from "@/app/section/main_page/HowCanHelpSection";
 import HelpFurtherSection from "@/app/section/main_page/HelpFurtherSection";
 import ServiceHeadingComponent from "@/components/ServiceHeadingComponent";
-import ServiceListComponent from "@/components/ServiceListComponent";
 
 import SanitaryOne from "@/images/SanitaryPage/SanitarySection/SanitaryOne.png";
 import SanitaryTwo from "@/images/SanitaryPage/SanitarySection/SanitaryTwo.png";
@@ -25,7 +24,7 @@ const SanitaryObject = [
   },
 ];
 
-const SanitaryListObject = [
+const ListObject = [
   {
     item: "Comprehensive & competent advice",
   },
@@ -50,7 +49,7 @@ export default function Sanitary() {
       ))}
 
       <ul className={classNames(s.container, s.services__list)}>
-        {SanitaryListObject.map((item, index) => (
+        {ListObject.map((item, index) => (
           <li className={s.services__item} key={index}>
             {item.item}
             <hr className={s.services__line} />
