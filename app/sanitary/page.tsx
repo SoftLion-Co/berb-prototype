@@ -7,6 +7,7 @@ import ServiceHeadingComponent from "@/components/ServiceHeadingComponent";
 
 import SanitaryOne from "@/images/SanitaryPage/SanitarySection/SanitaryOne.png";
 import SanitaryTwo from "@/images/SanitaryPage/SanitarySection/SanitaryTwo.png";
+import classNames from "classnames";
 
 export async function generateMetadata({}) {
   return { title: "Berb - Sanitary" };
@@ -23,14 +24,38 @@ const SanitaryObject = [
   },
 ];
 
+const ListObject = [
+  {
+    item: "Comprehensive & competent advice",
+  },
+  {
+    item: "Complete bathroom renovations",
+  },
+  {
+    item: "Professional execution of all installation work",
+  },
+];
+
 export default function Sanitary() {
   return (
     <>
-      <ServiceHeadingComponent text="we are a certified company & provide best plumbing services for you & your company." />
+      <ServiceHeadingComponent
+        title="Sanitary"
+        text="we are a certified company & provide best plumbing services for you & your company."
+      />
 
       {SanitaryObject.map((item, index) => (
         <ServiceSection key={index} image={item.image} text={item.text} />
       ))}
+
+      <ul className={classNames(s.container, s.services__list)}>
+        {ListObject.map((item, index) => (
+          <li className={s.services__item} key={index}>
+            {item.item}
+            <hr className={s.services__line} />
+          </li>
+        ))}
+      </ul>
 
       <HowCanHelpSection className={s.box} />
 

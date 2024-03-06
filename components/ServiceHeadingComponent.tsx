@@ -5,17 +5,19 @@ import MainTitleComponent from "@/components/MainTitleComponent";
 import LearnMoreComponent from "@/components/LearnMoreComponent";
 
 type ServiceHeadingProps = {
+  title: string;
+  text: string;
   className?: string;
-  text?: string;
 };
 
 const ServiceHeadingComponent: FC<ServiceHeadingProps> = ({
-  className,
+  title,
   text,
+  className,
 }) => {
   return (
     <div className={classNames(s.service, s.container, className)}>
-      <MainTitleComponent title="Sanitary" />
+      <MainTitleComponent title={title} />
 
       {text && <p className={s.service__text}>{text}</p>}
 
