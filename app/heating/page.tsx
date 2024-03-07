@@ -1,13 +1,15 @@
-import classNames from "classnames";
 import s from "@/app/sanitary/page.module.scss";
 
 import ServiceSection from "@/app/section/certified_page/ServiceSection";
 import HowCanHelpSection from "@/app/section/main_page/HowCanHelpSection";
 import HelpFurtherSection from "@/app/section/main_page/HelpFurtherSection";
 import ServiceHeadingComponent from "@/components/ServiceHeadingComponent";
+import ServiceListComponent from "@/components/ServiceListComponent";
 
 import HeatingOne from "@/images/HeatingPage/HeatingSection/HeatingOne.png";
 import HeatingTwo from "@/images/HeatingPage/HeatingSection/HeatingTwo.png";
+
+import { HeatingData } from "@/data/ServiceData";
 
 export async function generateMetadata({}) {
   return { title: "Berb - Heating" };
@@ -24,21 +26,6 @@ const HeatingObject = [
   },
 ];
 
-const ListObject = [
-  {
-    item: "Oil heating",
-  },
-  {
-    item: "Gas heating",
-  },
-  {
-    item: "Central heating",
-  },
-  {
-    item: "Smartphone solutions",
-  },
-];
-
 export default function Heating() {
   return (
     <>
@@ -51,14 +38,7 @@ export default function Heating() {
         <ServiceSection key={index} image={item.image} text={item.text} />
       ))}
 
-      <ul className={classNames(s.container, s.services__list)}>
-        {ListObject.map((item, index) => (
-          <li className={s.services__item} key={index}>
-            {item.item}
-            <hr className={s.services__line} />
-          </li>
-        ))}
-      </ul>
+      <ServiceListComponent services={HeatingData} />
 
       <HowCanHelpSection className={s.box} />
 

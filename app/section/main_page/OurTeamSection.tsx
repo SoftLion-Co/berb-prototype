@@ -30,11 +30,11 @@ const OurTeamSection = () => {
       <MainTitleComponent className={s.team__title} title="Out Team" />
       <div className={s.team__content}>
         {OurTeamData.map((item, index) => (
-          <p className={s.team__container} key={index}>
-            <span className={s.team__name}>{item.name}</span>
-            <span className={s.team__position}>{item.position}</span>
+          <div className={s.team__container} key={index}>
+            <p className={s.team__name}>{item.name}</p>
+            <p className={s.team__position}>{item.position}</p>
             <hr className={s.team__line} />
-          </p>
+          </div>
         ))}
       </div>
     </section>

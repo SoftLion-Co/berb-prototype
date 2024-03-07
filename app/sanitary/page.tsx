@@ -4,10 +4,12 @@ import ServiceSection from "@/app/section/certified_page/ServiceSection";
 import HowCanHelpSection from "@/app/section/main_page/HowCanHelpSection";
 import HelpFurtherSection from "@/app/section/main_page/HelpFurtherSection";
 import ServiceHeadingComponent from "@/components/ServiceHeadingComponent";
+import ServiceListComponent from "@/components/ServiceListComponent";
 
 import SanitaryOne from "@/images/SanitaryPage/SanitarySection/SanitaryOne.png";
 import SanitaryTwo from "@/images/SanitaryPage/SanitarySection/SanitaryTwo.png";
-import classNames from "classnames";
+
+import { SanitaryData } from "@/data/ServiceData";
 
 export async function generateMetadata({}) {
   return { title: "Berb - Sanitary" };
@@ -24,18 +26,6 @@ const SanitaryObject = [
   },
 ];
 
-const ListObject = [
-  {
-    item: "Comprehensive & competent advice",
-  },
-  {
-    item: "Complete bathroom renovations",
-  },
-  {
-    item: "Professional execution of all installation work",
-  },
-];
-
 export default function Sanitary() {
   return (
     <>
@@ -48,14 +38,7 @@ export default function Sanitary() {
         <ServiceSection key={index} image={item.image} text={item.text} />
       ))}
 
-      <ul className={classNames(s.container, s.services__list)}>
-        {ListObject.map((item, index) => (
-          <li className={s.services__item} key={index}>
-            {item.item}
-            <hr className={s.services__line} />
-          </li>
-        ))}
-      </ul>
+      <ServiceListComponent services={SanitaryData} />
 
       <HowCanHelpSection className={s.box} />
 
