@@ -1,3 +1,4 @@
+import MotionWrapper from "@/hooks/MotionWrapper";
 import s from "./OurTeamSection.module.scss";
 import MainTitleComponent from "@/components/MainTitleComponent";
 
@@ -26,18 +27,18 @@ const OurTeamData = [
 
 const OurTeamSection = () => {
   return (
-    <section className={s.container}>
-      <MainTitleComponent className={s.team__title} title="Out Team" />
+    <MotionWrapper initial viewport className={s.container}>
+      <MainTitleComponent className={s.team__title} title="Our Team" />
       <div className={s.team__content}>
         {OurTeamData.map((item, index) => (
-          <p className={s.team__container} key={index}>
+          <MotionWrapper tag="p" variants initial viewport className={s.team__container} key={index}>
             <span className={s.team__name}>{item.name}</span>
             <span className={s.team__position}>{item.position}</span>
             <hr className={s.team__line} />
-          </p>
+          </MotionWrapper>
         ))}
       </div>
-    </section>
+    </MotionWrapper>
   );
 };
 

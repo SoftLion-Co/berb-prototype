@@ -7,6 +7,7 @@ import LearnMoreComponent from "@/components/LearnMoreComponent";
 import ServicesSanitary from "@/images/HomePage/ServicesSection/ServicesSanitary.png";
 import ServicesHeating from "@/images/HomePage/ServicesSection/ServicesHeating.png";
 import ServicesSolar from "@/images/HomePage/ServicesSection/ServicesSolar.png";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const OurServicesData = [
   {
@@ -33,7 +34,7 @@ const OurServicesCardComponent = () => {
   return (
     <React.Fragment>
       {OurServicesData.map((item, index) => (
-        <div className={s.services} key={index}>
+        <MotionWrapper variants initial viewport className={s.services} key={index}>
           <div className={s.services__container}>
             <Image
               className={s.services__image}
@@ -52,7 +53,7 @@ const OurServicesCardComponent = () => {
           {index !== OurServicesData.length - 1 && (
             <hr className={s.services__line} />
           )}
-        </div>
+        </MotionWrapper>
       ))}
     </React.Fragment>
   );

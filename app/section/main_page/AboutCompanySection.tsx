@@ -3,6 +3,7 @@ import Link from "next/link";
 import s from "./AboutCompanySection.module.scss";
 import MainButtonComponent from "@/components/MainButtonComponent";
 import classNames from "classnames";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const AboutCompanyProps = [
   { text: "sanitary", href: "/sanitary" },
@@ -12,28 +13,36 @@ const AboutCompanyProps = [
 
 const AboutCompanySection = () => {
   return (
-    <section className={classNames(s.container)}>
+    <MotionWrapper
+      tag="section"
+      initial
+      viewport
+      className={classNames(s.container)}
+    >
       <div className={s.company}>
         <div className={s.company__links}>
           {AboutCompanyProps.map((item, index) => (
             <Link className={s.company__link} href={item.href} key={index}>
-              {item.text}
-              {index !== AboutCompanyProps.length - 1 && <span>/</span>}
+              <MotionWrapper variants custom={index}>
+                {item.text}
+                {index !== AboutCompanyProps.length - 1 && <span> /</span>}
+              </MotionWrapper>
             </Link>
           ))}
         </div>
-        <p className={s.company__text}>
+        <MotionWrapper tag="p" variants custom={3.5} className={s.company__text}>
           The company is a master business, in the 1st generation, which was
           founded in 2020 in Cologne. Our team of employees is specialized in
           all modern technologies around plumbing, heating and solar.
-        </p>
-        <MainButtonComponent
-          text="make appointment now"
-          href="/"
-          background="white"
-        />
+        </MotionWrapper>
+          <MainButtonComponent
+            text="make appointment now"
+            href="/"
+            background="white"
+            custom={4}
+          />
       </div>
-    </section>
+    </MotionWrapper>
   );
 };
 

@@ -8,6 +8,7 @@ import Twitter from "@/images/Vector/SocialNetworks/Twitter.svg";
 import Linkedin from "@/images/Vector/SocialNetworks/Linkedin.svg";
 import YouTube from "@/images/Vector/SocialNetworks/YouTube.svg";
 import Facebook from "@/images/Vector/SocialNetworks/Facebook.svg";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const socialMediaLinks = [
   { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/" },
@@ -35,7 +36,7 @@ const FooterComponent = () => {
   return (
     <footer className={classNames(s.footer, s.box)}>
       <div className={s.footer__all}>
-        <div className={classNames(s.background)}>
+        <div className={s.background}>
           <div className={classNames(s.container, s.footer__content)}>
             <Link className={s.footer__logo} href="/">
               BERB
@@ -43,8 +44,8 @@ const FooterComponent = () => {
 
             <hr className={s.footer__line} />
 
-            <div className={classNames(s.footer__container)}>
-              <div className={s.info}>
+            <MotionWrapper initial viewport className={classNames(s.footer__container)}>
+              <MotionWrapper variants   className={s.info}>
                 <p className={s.info__text}>
                   Berb is a master business, in the 1st generation, which was
                   founded in 2020 in Cologne.
@@ -60,24 +61,28 @@ const FooterComponent = () => {
                 <Link className={s.info__link} href={"tel:+4922112122315"}>
                   <span className={s.text}>+49 221 12 12 23 15</span>
                 </Link>
-              </div>
+              </MotionWrapper>
 
               <div className={s.navigation}>
                 {InformationItem.map((item, index) => (
-                  <Link href={item.href} key={index}>
-                    <span className={classNames(s.text)}>{item.text}</span>
-                  </Link>
+                  <MotionWrapper variants custom={index}>
+                    <Link href={item.href} key={index}>
+                      <span className={s.text}>{item.text}</span>
+                    </Link>
+                  </MotionWrapper>
                 ))}
               </div>
 
               <nav className={s.navigation}>
                 {NavigationItem.map((item, index) => (
-                  <Link href={item.href} key={index}>
-                    <span className={s.text}>{item.text}</span>
-                  </Link>
+                  <MotionWrapper variants custom={index+4}>
+                    <Link href={item.href} key={index}>
+                      <span className={s.text}>{item.text}</span>
+                    </Link>
+                  </MotionWrapper>
                 ))}
               </nav>
-            </div>
+            </MotionWrapper>
 
             <hr className={s.footer__line} />
           </div>

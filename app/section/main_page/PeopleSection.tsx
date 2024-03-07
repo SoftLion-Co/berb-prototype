@@ -1,10 +1,11 @@
 import s from "./PeopleSection.module.scss";
 import MainTitleComponent from "@/components/MainTitleComponent";
 import PeopleCardComponent from "@/components/main_page/PeopleCardComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const PeopleSection = () => {
   return (
-    <section className={s.box}>
+    <MotionWrapper initial viewport className={s.box}>
       <div className={s.background}>
         <div className={s.container}>
           <MainTitleComponent
@@ -16,7 +17,7 @@ const PeopleSection = () => {
           <PeopleCardComponent />
         </div>
       </div>
-    </section>
+    </MotionWrapper>
   );
 };
 

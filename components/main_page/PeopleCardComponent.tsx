@@ -1,6 +1,7 @@
 import Image from "next/image";
 import s from "./PeopleCardComponent.module.scss";
 import OurTeam from "@/images/HomePage/OurTeamSection/OurTeam.png";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const PeopleCardData = [
   {
@@ -51,7 +52,7 @@ const PeopleCardComponent = () => {
   return (
     <div className={s.people}>
       {PeopleCardData.map((item, index) => (
-        <div className={s.people__container} key={index}>
+        <MotionWrapper initial viewport variants className={s.people__container} key={index}>
           <h3 className={s.people__title}>„{item.title}“</h3>
           <p className={s.people__text}>{item.text}</p>
 
@@ -63,7 +64,7 @@ const PeopleCardComponent = () => {
               <span className={s.people__position}>{item.position}</span>
             </p>
           </div>
-        </div>
+        </MotionWrapper>
       ))}
     </div>
   );

@@ -6,6 +6,7 @@ import s from "./HowCanHelpSection.module.scss";
 import HelpSection from "@/images/HomePage/HelpSection/HelpSection.png";
 import MainTitleComponent from "@/components/MainTitleComponent";
 import MainButtonComponent from "@/components/MainButtonComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface HowCanHelpProps {
   className?: string;
@@ -16,10 +17,10 @@ const HowCanHelpSection: FC<HowCanHelpProps> = ({
   className,
   typeTag = "section",
 }) => {
-  const TypeTag = typeTag || "h1";
+  const TypeTag = typeTag;
 
   return (
-    <TypeTag className={classNames(s.help, className)}>
+    <MotionWrapper tag={TypeTag} initial viewport className={classNames(s.help, className)}>
       <Image className={s.help__image} src={HelpSection} alt="Help Image" />
 
       <div className={classNames(s.container)}>
@@ -30,16 +31,16 @@ const HowCanHelpSection: FC<HowCanHelpProps> = ({
             titleLevel="h2"
           />
 
-          <p className={s.help__text}>
+          <MotionWrapper tag="p" variants className={s.help__text} custom={2}>
             Plumbing, Heating & Solar from Cologne. With us you get services
             from one from one source. Let us prepare your non-binding offer from
             us.
-          </p>
+          </MotionWrapper>
 
-          <MainButtonComponent text="request offer now" href="" color="white" />
+          <MainButtonComponent text="request offer now" href="" color="white" custom={3}/>
         </div>
       </div>
-    </TypeTag>
+    </MotionWrapper>
   );
 };
 

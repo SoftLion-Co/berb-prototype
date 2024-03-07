@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
 import s from "./MainTitleComponent.module.scss";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface MainTitleProps {
   title: string;
@@ -18,13 +19,13 @@ const MainTitleComponent: FC<MainTitleProps> = ({
   const TitleTag = titleLevel || "h1";
 
   return (
-    <TitleTag
+    <MotionWrapper tag={TitleTag} variants
       className={classNames(s.title, className, {
         [s.title__black]: color === "black",
       })}
     >
       {title}
-    </TitleTag>
+    </MotionWrapper>
   );
 };
 

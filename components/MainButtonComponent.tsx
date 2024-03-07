@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import classNames from "classnames";
 import s from "./MainButtonComponent.module.scss";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface ButtonProps {
   text: string;
@@ -10,6 +11,7 @@ interface ButtonProps {
   background?: "black" | "white";
   color?: "black" | "white";
   onClick?: () => void;
+  custom?:number;
 }
 
 const MainButtonComponent: FC<ButtonProps> = ({
@@ -19,23 +21,26 @@ const MainButtonComponent: FC<ButtonProps> = ({
   background = "black",
   color = "black",
   onClick,
+  custom = 1
 }) => {
   const backgroundColor = background === "black" ? s.black : s.white;
   const textColor = color === "black" ? s.blackText : s.whiteText;
 
   return (
-    <Link
-      className={classNames(
-        s.main__button,
-        backgroundColor,
-        textColor,
-        className
-      )}
-      onClick={onClick}
-      href={href}
-    >
-      {text}
-    </Link>
+    <MotionWrapper variants custom={custom}>
+      <Link
+        className={classNames(
+          s.main__button,
+          backgroundColor,
+          textColor,
+          className
+        )}
+        onClick={onClick}
+        href={href}
+      >
+        {text}
+      </Link>
+    </MotionWrapper>
   );
 };
 

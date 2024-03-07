@@ -9,6 +9,7 @@ import ReferencesOne from "@/images/HomePage/ReferencesSection/ReferencesOne.png
 import ReferencesTwo from "@/images/HomePage/ReferencesSection/ReferencesTwo.png";
 import ReferencesThree from "@/images/HomePage/ReferencesSection/ReferencesThree.png";
 import ReferencesFour from "@/images/HomePage/ReferencesSection/ReferencesFour.png";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 const ReferencesImages = [
   {
@@ -27,7 +28,7 @@ const ReferencesImages = [
 
 const ReferencesSection = () => {
   return (
-    <section className={s.box}>
+    <MotionWrapper initial viewport className={s.box}>
       <div className={s.background}>
         <div className={classNames(s.container, s.references)}>
           <MainTitleComponent
@@ -37,7 +38,7 @@ const ReferencesSection = () => {
             color="black"
           />
           <div className={s.references__content}>
-            <div className={s.references__container}>
+            <MotionWrapper variants className={s.references__container}>
               {ReferencesImages.map((item, index) => (
                 <Image
                   className={s.references__image}
@@ -46,19 +47,18 @@ const ReferencesSection = () => {
                   alt="References"
                 />
               ))}
-            </div>
-
-            <LearnMoreComponent
-              className={s.references__learn}
-              text="show me more references"
-              href="/references"
-              color="black"
-            />
+              <LearnMoreComponent
+                className={s.references__learn}
+                text="show me more references"
+                href="/references"
+                color="black"
+              />
+            </MotionWrapper>
           </div>
         </div>
         <HowCanHelpSection />
       </div>
-    </section>
+    </MotionWrapper>
   );
 };
 
