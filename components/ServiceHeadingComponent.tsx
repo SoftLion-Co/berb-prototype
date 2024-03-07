@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import s from "./ServiceHeadingComponent.module.scss";
 import MainTitleComponent from "@/components/MainTitleComponent";
 import LearnMoreComponent from "@/components/LearnMoreComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 type ServiceHeadingProps = {
   title: string;
@@ -16,13 +17,13 @@ const ServiceHeadingComponent: FC<ServiceHeadingProps> = ({
   className,
 }) => {
   return (
-    <div className={classNames(s.service, s.container, className)}>
+    <MotionWrapper initial viewport variants className={classNames(s.service, s.container, className)}> 
       <MainTitleComponent title={title} />
 
       {text && <p className={s.service__text}>{text}</p>}
 
       <LearnMoreComponent text="Learn More" href="" />
-    </div>
+    </MotionWrapper>
   );
 };
 

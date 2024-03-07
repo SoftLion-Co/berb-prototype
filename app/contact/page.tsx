@@ -7,9 +7,5 @@ export async function generateMetadata({}) {
 }
 
 export default function Contact() {
-  return (
-    <React.Fragment>
-      <ContactSection />
-    </React.Fragment>
-  );
+  return <ContactSection />;
 }

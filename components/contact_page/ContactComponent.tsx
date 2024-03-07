@@ -9,6 +9,7 @@ import MainButtonComponent from "../MainButtonComponent";
 import Geolocation from "@/images/Vector/Connection/Geolocation.svg";
 import Mail from "@/images/Vector/Connection/Mail.svg";
 import Phone from "@/images/Vector/Connection/Phone.svg";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 interface ContactProps {
   className?: string;
@@ -29,7 +30,7 @@ const ContactComponent: FC<ContactProps> = ({ className }) => {
   return (
     <div className={classNames(s.box, className)}>
       <div className={s.background}>
-        <div className={classNames(s.container, s.contact)}>
+        <MotionWrapper initial viewport variants className={classNames(s.container, s.contact)}>
           <div className={s.contact__container}>
             <MainTitleComponent
               className={s.contact__title}
@@ -73,7 +74,7 @@ const ContactComponent: FC<ContactProps> = ({ className }) => {
               color="black"
             />
           </div>
-        </div>
+        </MotionWrapper>
       </div>
     </div>
   );

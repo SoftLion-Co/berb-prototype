@@ -5,6 +5,7 @@ import arrow from "@/images/Vector/Navigation/ArrowNavigationLong.svg";
 import Image, { StaticImageData } from "next/image";
 import s from "./SliderComponent.module.scss";
 import MainTitleComponent from "@/components/MainTitleComponent";
+import MotionWrapper from "@/hooks/MotionWrapper";
 
 type SliderProps = {
   images: StaticImageData[];
@@ -41,7 +42,7 @@ const SliderComponent = ({ images, title }: SliderProps) => {
   }, []);
 
   return (
-    <div className={s.slider__container}>
+    <MotionWrapper variants initial viewport className={s.slider__container}>
       <div className={s.sidebar}>
         <MainTitleComponent
           color="white"
@@ -128,7 +129,7 @@ const SliderComponent = ({ images, title }: SliderProps) => {
           </Carousel.Slide>
         ))}
       </Carousel>
-    </div>
+    </MotionWrapper>
   );
 };
 

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import classNames from "classnames";
 import s from "./ContactSection.module.scss";
 import ContactComponent from "@/components/contact_page/ContactComponent";
 import ContactHero from "@/images/ContactPage/ContactHero/ContactHero.png";
