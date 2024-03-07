@@ -14,7 +14,7 @@ const ContactSection = () => {
           alt="Contact Hero"
         />
       </div>
-      
+
       <ContactComponent className={s.contact__component} />
     </section>
   );
