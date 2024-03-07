@@ -1,3 +1,54 @@
 @import "@/style/colors";
 @import "@/style/container";
 @import "@/style/viewports";
+
+.services {
+  &__list {
+    width: 100%;
+    display: grid;
+    gap: 22px;
+
+    @include for-size(tablet) {
+      gap: 30px;
+    }
+    @include for-size(laptop) {
+      gap: 44px;
+    }
+    @include for-size(desktop) {
+      gap: 58px;
+    }
+  }
+
+  &__item {
+    list-style-type: disc;
+    margin-left: 18px;
+
+    @include for-size(tablet) {
+      font-size: 26px;
+      margin-left: 24px;
+    }
+    @include for-size(laptop) {
+      font-size: 36px;
+      margin-left: 28px;
+    }
+    @include for-size(desktop) {
+      font-size: 52px;
+      margin-left: 38px;
+    }
+  }
+
+  &__line {
+    margin-top: 22px;
+    width: 100%;
+
+    @include for-size(tablet) {
+      margin-top: 30px;
+    }
+    @include for-size(laptop) {
+      margin-top: 44px;
+    }
+    @include for-size(desktop) {
+      margin-top: 58px;
+    }
+  }
+}
