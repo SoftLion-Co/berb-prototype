@@ -11,7 +11,7 @@ interface ButtonProps {
   background?: "black" | "white";
   color?: "black" | "white";
   onClick?: () => void;
-  custom?:number;
+  custom?: number;
 }
 
 const MainButtonComponent: FC<ButtonProps> = ({
@@ -21,7 +21,7 @@ const MainButtonComponent: FC<ButtonProps> = ({
   background = "black",
   color = "black",
   onClick,
-  custom = 1
+  custom = 1,
 }) => {
   const backgroundColor = background === "black" ? s.black : s.white;
   const textColor = color === "black" ? s.blackText : s.whiteText;
